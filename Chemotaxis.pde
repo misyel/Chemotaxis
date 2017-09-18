@@ -25,19 +25,21 @@ int direction;
 class Bacteria    
 {  
   Bacteria() {
-    myX = 0;
-    myY = 0;
-    direction = (int)(Math.random()*4);
+    myX = 200;
+    myY = 200;
+    //direction = (int)(Math.random()*4);
   }
   void move() {
+  	//myX = myX + (int)(Math.random()*5)-2;
+  	//myY = myY + (int)(Math.random()*5)-2;
     if (direction == 0) {
-      myX = myX + 20; //right
+      myX = myX + (int)(Math.random()*5)-2; //right
     } else if (direction == 1) {
-      myX = myX - 20; //left
+      myX = myX - (int)(Math.random()*5)-2; //left
     } else if (direction == 2) {
-      myY = myY + 20; //down
+      myY = myY + (int)(Math.random()*5)-2; //down
     } else {
-      myY = myY - 20;
+      myY = myY - (int)(Math.random()*5)-2;
     }
     }   
     void show() {
