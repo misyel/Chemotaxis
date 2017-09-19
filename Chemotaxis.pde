@@ -3,7 +3,7 @@ Bacteria [] colony;
 void setup()   
 {     
   size(500, 500);
-  colony = new Bacteria[10];
+  colony = new Bacteria[50];
   for (int i=0; i<colony.length; i++){
   	colony[i] = new Bacteria();
   }
@@ -15,7 +15,8 @@ void draw()
   //bacteria = new Bacteria(250, 250);
   for (int i=0; i<colony.length; i++){
   	colony[i].move();
-  	colony[i].show();}
+  	colony[i].show();
+  }
     //move and show the bacteria
 }  
 int myX;
@@ -25,13 +26,16 @@ int direction;
 class Bacteria    
 {  
   Bacteria() {
-    myX = 200;
-    myY = 200;
+  	myX = (int)(Math.random()*501);
+ 	myY = (int)(Math.random()*501);
+    //myX = (int)(Math.random()*300)+100;
+    //myY = (int)(Math.random()*400)+100;
     //direction = (int)(Math.random()*4);
   }
   void move() {
-  	//myX = myX + (int)(Math.random()*5)-2;
-  	//myY = myY + (int)(Math.random()*5)-2;
+  	myX = myX + (int)(Math.random()*5)-2;
+  	myY = myY + (int)(Math.random()*5)-2;
+  	/*
     if (direction == 0) {
       myX = myX + (int)(Math.random()*5)-2; //right
     } else if (direction == 1) {
@@ -41,9 +45,11 @@ class Bacteria
     } else {
       myY = myY - (int)(Math.random()*5)-2;
     }
+    */
     }   
     void show() {
-      fill(255, 0, 0);
+      stroke(124,50,128);
+      fill(0);
       ellipse(myX, myY, 10, 10);
     }
     //lots of java!
