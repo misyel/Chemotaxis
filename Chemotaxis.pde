@@ -1,4 +1,4 @@
-//declare bacteria variables here  
+  
 Bacteria [] colony; 
 void setup()   
 {     
@@ -10,7 +10,7 @@ void setup()
   	colony[i] = new Bacteria();
     colony[i].show();
   }
-  //initialize bacteria variables here
+
 }   
 void draw()   
 {    
@@ -19,7 +19,7 @@ void draw()
   	colony[i].move();
   	colony[i].show();
   }
-    //move and show the bacteria
+    
 }  
 
 class Bacteria    
@@ -35,13 +35,13 @@ class Bacteria
     mY = 250;
   }
   void move() {
-    if(mouseX < myX){
+    if(mouseX > myX){
       mX = 0;
     }
     else{
       mX = 9;
     }
-    if (mouseY < myY){
+    if (mouseY > myY){
       mY = 0;
     }
     else{
@@ -66,7 +66,7 @@ class Bacteria
       ellipse(myX+10,myY-5,5,5);
       ellipse(myX+10,myY+15,5,5);
       ellipse(myX-15,myY+15,5,5);
-      //cookie monster
+      //pepe
       fill(122,201,89);
       ellipse(mouseX,mouseY,140,90);
       fill(255);
@@ -76,6 +76,5 @@ class Bacteria
       ellipse(mouseX+30,mouseY-60,20,20);
       ellipse(mouseX-30,mouseY-60,20,20);
     }
-    //lots of java!
    
 }
