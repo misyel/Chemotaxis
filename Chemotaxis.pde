@@ -3,54 +3,78 @@ Bacteria [] colony;
 void setup()   
 {     
   size(500, 500);
-  colony = new Bacteria[50];
+  frameRate(25);
+  background(0);
+  colony = new Bacteria[150];
   for (int i=0; i<colony.length; i++){
   	colony[i] = new Bacteria();
+    colony[i].show();
   }
   //initialize bacteria variables here
 }   
 void draw()   
 {    
   background(0);
-  //bacteria = new Bacteria(250, 250);
   for (int i=0; i<colony.length; i++){
   	colony[i].move();
   	colony[i].show();
   }
     //move and show the bacteria
 }  
-int myX;
-int myY;
-int myColor;
-int direction;
+
 class Bacteria    
 {  
+  int myX;
+  int myY;
+  int myColor;
+  int mX,mY;
   Bacteria() {
   	myX = (int)(Math.random()*501);
- 	myY = (int)(Math.random()*501);
-    //myX = (int)(Math.random()*300)+100;
-    //myY = (int)(Math.random()*400)+100;
-    //direction = (int)(Math.random()*4);
+ 	  myY = (int)(Math.random()*501);
+    mX = 250;
+    mY = 250;
   }
   void move() {
-  	myX = myX + (int)(Math.random()*5)-2;
-  	myY = myY + (int)(Math.random()*5)-2;
-  	/*
-    if (direction == 0) {
-      myX = myX + (int)(Math.random()*5)-2; //right
-    } else if (direction == 1) {
-      myX = myX - (int)(Math.random()*5)-2; //left
-    } else if (direction == 2) {
-      myY = myY + (int)(Math.random()*5)-2; //down
-    } else {
-      myY = myY - (int)(Math.random()*5)-2;
+    if(mouseX < myX){
+      mX = 0;
     }
-    */
+    else{
+      mX = 9;
+    }
+    if (mouseY < myY){
+      mY = 0;
+    }
+    else{
+      mY = 9;
+    }
+    if (mousePressed == true){
+      myY = 250;
+      myX = 250;
+    }
+  	myX = myX + (int)(Math.random()*5)-mX;
+  	myY = myY + (int)(Math.random()*5)-mY;
     }   
     void show() {
-      stroke(124,50,128);
+      noStroke();
+      //cookies
+      fill(118,92,67);
+      ellipse(myX, myY, 50, 50);
       fill(0);
-      ellipse(myX, myY, 10, 10);
+      ellipse(myX-10,myY,5,5);
+      ellipse(myX,myY-15,5,5);
+      ellipse(myX,myY,5,5);
+      ellipse(myX+10,myY-5,5,5);
+      ellipse(myX+10,myY+15,5,5);
+      ellipse(myX-15,myY+15,5,5);
+      //cookie monster
+      fill(122,201,89);
+      ellipse(mouseX,mouseY,140,90);
+      fill(255);
+      ellipse(mouseX+30,mouseY-60,60,60);
+      ellipse(mouseX-30,mouseY-60,60,60);
+      fill(0);
+      ellipse(mouseX+30,mouseY-60,20,20);
+      ellipse(mouseX-30,mouseY-60,20,20);
     }
     //lots of java!
    
