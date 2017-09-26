@@ -14,7 +14,7 @@ void setup()
 }   
 void draw()   
 {    
-  background(0);
+  background(214,162,211);
   for (int i=0; i<colony.length; i++){
   	colony[i].move();
   	colony[i].show();
@@ -30,7 +30,7 @@ class Bacteria
   int mX,mY;
   Bacteria() {
   	myX = (int)(Math.random()*501);
- 	  myY = (int)(Math.random()*501);
+ 	  myY = (int)(Math.random()*501);                                           
     mX = 250;
     mY = 250;
   }
