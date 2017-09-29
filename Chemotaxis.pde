@@ -16,39 +16,15 @@ void setup()
 
 }   
 
-void startScreen(){
-  background(214,162,211);
-  fill(255);
-  x = 250;
-  y = 50;
-  myFont = createFont("Ariel",32);
-  textFont(myFont);
-  textSize(80);
-  text("PEPE",x,y);
-  y=y+100;
-  textAlign(CENTER,CENTER);
-  if (mousePressed == true){
-    titleScreen = true;
-  }
-}
 void draw()   
 {    
- if (titleScreen == false){
-   startScreen();
- }
- if (titleScreen == true){
-   started();
- }
-    
-}  
-
-void started(){
-  background(214,162,211);
+ background(214,162,211);
   for (int i=0; i<colony.length; i++){
     colony[i].move();
     colony[i].show();
   }
-}
+    
+}  
 
 class Bacteria    
 {  
